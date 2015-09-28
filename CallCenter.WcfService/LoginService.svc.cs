@@ -17,16 +17,7 @@ namespace CallCenter.WcfService
         public IOperator Login(string number)
         {
             IControllerFactory controllerFactory = Resolver.Resolve<IControllerFactory>();
-            try
-            {
-                IEnumerable<ICustomer> customers = controllerFactory.CustomerController.GetAll();
-                Debug.WriteLine(customers.Count());
-            }
-            catch (Exception exception)
-            {
-                Debug.WriteLine(exception);
-            }
-            return controllerFactory.OperatorsController.GetById(3001);
+            return controllerFactory.OperatorsController.GetByNumber(number);
         }
 
         public void LogOut(string number)

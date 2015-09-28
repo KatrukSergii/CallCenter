@@ -36,7 +36,7 @@ namespace CallCenter.Client.SqlStorage.Controllers
             {
                 IList<T> operators =
                     session.CreateCriteria(typeof(T))
-                        .Add(Restrictions.Eq("Id", id.ToString()))
+                        .Add(Restrictions.Eq("Id", id))
                         .List<T>();
                 return WcfResolver.Resolve<T>(operators.FirstOrDefault(), session);
             }

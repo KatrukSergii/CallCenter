@@ -19,10 +19,10 @@ namespace CallCenter.Client.Communication
         public void Connect()
         {
             this.LoginService = new LoginService(new LoginClient());
-            this.CustomerRepository = new CustomerControllerProxy();
-            this.OperatorController = new ControllerProxyBase<IOperator>();
-            this.CallCenterController = new ControllerProxyBase<ICallCenter>();
-            this.CampaignController = new ControllerProxyBase<ICampaign>();
+            //this.CustomerRepository = new CustomerControllerProxy();
+            //this.OperatorController = new ControllerProxyBase<IOperator>();
+            //this.CallCenterController = new ControllerProxyBase<ICallCenter>();
+            //this.CampaignController = new ControllerProxyBase<ICampaign>();
         }
 
         public void Disconncet()

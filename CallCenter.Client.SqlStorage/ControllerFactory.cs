@@ -1,4 +1,6 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using CallCenter.Client.SqlStorage.Controllers;
 using CallCenter.Common;
 using CallCenter.Common.Controllers;
@@ -23,12 +25,20 @@ namespace CallCenter.Client.SqlStorage
 
         public ControllerFactory()
         {
+            try
+            {
             Configuration configuration = new Configuration();
             configuration.Configure();
             this.sessionFactory = configuration.BuildSessionFactory();
             this.OperatorsController = new OperatorsController(this.sessionFactory);
             this.CallCenterController = new CallCenterController(this.sessionFactory);
             this.CustomerController = new CustomerController(this.sessionFactory);
+            }
+            catch (Exception exception)
+            {
+                Debug.Write(exception);
+                throw;
+            }
         }
     }
 }
