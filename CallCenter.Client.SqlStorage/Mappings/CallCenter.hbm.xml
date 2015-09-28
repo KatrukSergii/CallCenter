@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="CallCenter.Client.SqlStorage"
+                   namespace="CallCenter.Client.SqlStorage.Entities">
+
+  <class name="CallCenter" table="CallCenter" lazy="true">
+    <id name="Id" type="int"> <generator class="native" /> </id>
+    <property name="Name" type="String" />
+    <bag name="Operators" lazy="true" batch-size="25" cascade="all-delete-orphan">
+      <key column="CallCenterId" />
+      <one-to-many class="Operator" />
+    </bag>
+    <bag name="Campaigns" lazy="true" batch-size="25" cascade="all-delete-orphan">
+      <key column="CallCenterId" />
+      <one-to-many class="Campaign" />
+    </bag>
+  </class>
+
+</hibernate-mapping>
