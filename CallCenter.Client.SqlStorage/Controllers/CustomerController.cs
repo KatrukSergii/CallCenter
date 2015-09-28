@@ -1,9 +1,10 @@
+using CallCenter.Common.Controllers;
 using CallCenter.Common.Entities;
 using NHibernate;
 
 namespace CallCenter.Client.SqlStorage.Controllers
 {
-    public class CustomerController : EntityControllerBase<ICustomer>
+    public class CustomerController : EntityControllerBase<ICustomer>, ICustomerController
     {
         public CustomerController(ISessionFactory sessionFactory):base(sessionFactory)
         {

@@ -19,14 +19,14 @@ namespace CallCenter.WcfService
             IControllerFactory controllerFactory = Resolver.Resolve<IControllerFactory>();
             try
             {
-                IEnumerable<ICustomer> customers = controllerFactory.CustomerController.GetAllCustomer();
+                IEnumerable<ICustomer> customers = controllerFactory.CustomerController.GetAll();
                 Debug.WriteLine(customers.Count());
             }
             catch (Exception exception)
             {
                 Debug.WriteLine(exception);
             }
-            return controllerFactory.OperatorsController.GetByNumber(3001);
+            return controllerFactory.OperatorsController.GetById(3001);
         }
 
         public void LogOut(string number)

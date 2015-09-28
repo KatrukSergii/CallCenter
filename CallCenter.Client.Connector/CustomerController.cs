@@ -5,7 +5,7 @@ using CallCenter.Common.Entities;
 
 namespace CallCenter.Client.Communication
 {
-    public class CustomerController : ICustomerController
+    public class CustomerController : IEntityController<ICustomer>
     {
         private ICustomerController controller;
 
@@ -18,9 +18,9 @@ namespace CallCenter.Client.Communication
             this.controller = controller;
         }
 
-        public IEnumerable<ICustomer> GetAllCustomer()
+        public IEnumerable<ICustomer> GetAll()
         {
-            return this.controller.GetAllCustomer();
+            return this.controller.GetAll();
         }
 
         public ICustomer GetById(int id)
@@ -28,9 +28,14 @@ namespace CallCenter.Client.Communication
             return this.controller.GetById(id);
         }
 
-        public int Save(ICustomer customer)
+        public IEnumerable<ICustomer> GetByName(string entityName)
         {
-            return this.controller.Save(customer);
+            return this.controller.GetByName(entityName);
+        }
+
+        public int Insert(ICustomer customer)
+        {
+            return this.controller.Insert(customer);
         }
 
         public void DeleteById(int id)
