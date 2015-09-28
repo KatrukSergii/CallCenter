@@ -1,8 +1,7 @@
 namespace CallCenter.Common.Entities
 {
-    public interface ICampaign : ISerializable
+    public interface ICampaign : ISerializable, IIdentifier
     {
-        int Id { get; set; }
         string Name { get; set; }
         ICallCenter CallCenter { get; set; }
     }

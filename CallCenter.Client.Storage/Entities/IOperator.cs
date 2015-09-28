@@ -1,10 +1,7 @@
-﻿using System.Runtime.Serialization;
-
-namespace CallCenter.Common.Entities
+﻿namespace CallCenter.Common.Entities
 {
-    public interface IOperator:ISerializable
+    public interface IOperator:ISerializable, IIdentifier
     {
-        int Id { get; set; }
         string Number { get; set; }
         string Name { get; set; }
         ICallCenter CallCenter { get; set; }

@@ -55,6 +55,7 @@
     <Compile Include="Controllers\IControllerFactory.cs" />
     <Compile Include="Entities\ICustomer.cs" />
     <Compile Include="Controllers\ICustomerController.cs" />
+    <Compile Include="Entities\IIdentifier.cs" />
     <Compile Include="Entities\IOperator.cs" />
     <Compile Include="Controllers\IOperatorsController.cs" />
     <Compile Include="Entities\ISerializable.cs" />

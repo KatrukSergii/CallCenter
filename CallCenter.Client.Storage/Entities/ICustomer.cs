@@ -1,8 +1,7 @@
 ﻿namespace CallCenter.Common.Entities
 {
-    public interface ICustomer : ISerializable
+    public interface ICustomer : ISerializable, IIdentifier
     {
-        int Id { get; set; }
         string FirstName { get; set; }
         string MiddleName { get; set; }
         string LastName { get; set; }

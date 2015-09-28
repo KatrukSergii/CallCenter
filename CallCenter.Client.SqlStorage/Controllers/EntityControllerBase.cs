@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using CallCenter.Common.Controllers;
+using CallCenter.Common.Entities;
 using NHibernate;
 using NHibernate.Criterion;
 
 namespace CallCenter.Client.SqlStorage.Controllers
 {
-    public class EntityControllerBase<T>:IEntityController<T> where T:class 
+    public class EntityControllerBase<T>:IEntityController<T> where T:class, IIdentifier
     {
         protected readonly ISessionFactory SessionFactory;
         protected virtual string ColumnNameToSearch { get; set; }
@@ -18,7 +19,7 @@ namespace CallCenter.Client.SqlStorage.Controllers
         {
             using (ISession session = this.SessionFactory.OpenSession())
             {
-                session.Delete($"from {typeof (T)} where id = {id}");
+                session.Delete($"from {typeof (T)} where {nameof(IIdentifier.Id)} = {id}");
             }
         }
 
@@ -34,9 +35,10 @@ namespace CallCenter.Client.SqlStorage.Controllers
         {
             using (ISession session = this.SessionFactory.OpenSession())
             {
+                string identifierName = nameof(IIdentifier.Id);
                 IList<T> operators =
                     session.CreateCriteria(typeof(T))
-                        .Add(Restrictions.Eq("Id", id))
+                        .Add(Restrictions.Eq(identifierName, id))
                         .List<T>();
                 return WcfResolver.Resolve<T>(operators.FirstOrDefault(), session);
             }
@@ -48,7 +50,7 @@ namespace CallCenter.Client.SqlStorage.Controllers
             {
                 IList<T> results =
                     session.CreateCriteria(typeof(T))
-                        .Add(Restrictions.Eq(this.ColumnNameToSearch, entityName.ToString()))
+                        .Add(Restrictions.Eq(this.ColumnNameToSearch, entityName))
                         .List<T>();
                 return WcfResolver.ResolveList<T>(results.ToList(), session);
             }

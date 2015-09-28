@@ -21,7 +21,7 @@ namespace CallCenter.Client.SqlStorage.Controllers
             {
                 IList<Operator> operators =
                    session.CreateCriteria(typeof(Operator))
-                       .Add(Restrictions.Eq("Number", number))
+                       .Add(Restrictions.Eq(nameof(IOperator.Number), number))
                        .List<Operator>();
                 return WcfResolver.Resolve<Operator>(operators.FirstOrDefault(), session);
             }
