@@ -1,5 +1,4 @@
 ﻿using System.ServiceModel;
-using CallCenter.Common;
 using CallCenter.Common.Entities;
 using CallCenter.Server.Helper;
 
