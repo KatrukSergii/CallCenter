@@ -57,7 +57,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="WindowService.cs" />
+    <Compile Include="Windows\SettignsWindow.xaml.cs">
+      <DependentUpon>SettignsWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Windows\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -65,10 +73,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Windows\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\SettignsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -98,18 +113,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CallCenter.Client.Connector\CallCenter.Client.Communication.csproj">
-      <Project>{d98285f7-53c7-4f8b-a1cb-8905c60a5ab2}</Project>
-      <Name>CallCenter.Client.Communication</Name>
+    <ProjectReference Include="..\CallCenter.Client.Core\CallCenter.Client.Core.csproj">
+      <Project>{323d5b5f-03a4-4d37-bd90-edbea5243fce}</Project>
+      <Name>CallCenter.Client.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\CallCenter.Client.Storage\CallCenter.Common.csproj">
       <Project>{54840F7E-5E07-483A-AAFC-EAB04EB50FAA}</Project>
       <Name>CallCenter.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CallCenter.Datacontracts\CallCenter.ServiceContracts.csproj">
-      <Project>{1229476f-6344-4e81-a9a2-7db9d6bfd21c}</Project>
-      <Name>CallCenter.ServiceContracts</Name>
+    <ProjectReference Include="..\CallCenterClientViewModel\CallCenter.Client.ViewModel.csproj">
+      <Project>{4c9d70d1-383a-4adf-ab7d-2efc828d7317}</Project>
+      <Name>CallCenter.Client.ViewModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

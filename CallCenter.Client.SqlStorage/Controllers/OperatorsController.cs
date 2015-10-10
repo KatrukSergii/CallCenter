@@ -10,10 +10,6 @@ namespace CallCenter.Client.SqlStorage.Controllers
 {
     public class OperatorsController : EntityControllerBase<IOperator>, IOperatorsController
     {
-        public OperatorsController(ISessionFactory sessionFactory):base(sessionFactory)
-        {
-        }
-
         protected override string ColumnNameToSearch => nameof(IOperator.Name);
         public IOperator GetByNumber(string number)
         {
@@ -25,6 +21,9 @@ namespace CallCenter.Client.SqlStorage.Controllers
                        .List<Operator>();
                 return WcfResolver.Resolve<Operator>(operators.FirstOrDefault(), session);
             }
+        }
+        public OperatorsController(ISessionFactory sessionFactory):base(sessionFactory)
+        {
         }
     }
 }
