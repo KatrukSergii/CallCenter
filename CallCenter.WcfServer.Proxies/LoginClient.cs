@@ -12,6 +12,9 @@ namespace CallCenter.WcfServer.Proxies
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(number))
+                    throw new ArgumentNullException("number");
+
                 IOperator res = this.Channel.Login(number);
                 return res;
             }

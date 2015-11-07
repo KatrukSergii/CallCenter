@@ -1,11 +1,14 @@
-﻿using CallCenter.Client.ViewModel.Helpers;
+﻿using System.Threading.Tasks;
+using CallCenter.Client.ViewModel.Helpers;
 
 namespace CallCenter.Client.ViewModel.ViewModels
 {
     public abstract class OkCancelViewModel : ViewModelBase
     {
-        protected abstract void OnOkExecuted();
-        protected abstract void OnCancelExecuted();
+        protected virtual void OnOkExecuted(object parameter) { }
+        protected virtual void OnOkExecutedAsync(object parameter) { }
+        protected virtual void OnCancelExecuted(object parameter) { }
+        protected virtual void OnCancelExecutedAsync(object parameter) { }
 
         public SimpleCommand OkCommand
         {
@@ -23,14 +26,26 @@ namespace CallCenter.Client.ViewModel.ViewModels
             }
         }
 
-        private void Cancel(object obj)
+        private async void Cancel(object parameter)
         {
-            this.OnCancelExecuted();
+            await this.OnCancelExecutedTask(parameter);
+            this.OnCancelExecuted(parameter);
         }
 
-        private void Save(object o)
+        private Task OnOkExecutedTask(object parameter)
         {
-            this.OnOkExecuted();
+            return Task.Run(() => this.OnOkExecutedAsync(parameter));
+        }
+
+        private Task OnCancelExecutedTask(object parameter)
+        {
+            return Task.Run(() => this.OnCancelExecutedAsync(parameter));
+        }
+
+        private async void Save(object parameter)
+        {
+            await this.OnOkExecutedTask(parameter);
+            this.OnOkExecuted(parameter);
         }
 
         public OkCancelViewModel(IWindowService windowService) : base(windowService)

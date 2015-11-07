@@ -54,6 +54,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallCenter.WcfService.UnitT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallCenter.WcfService.ConsoleHost.unitTests", "CallCenter.WcfService.ConsoleHost.unitTests\CallCenter.WcfService.ConsoleHost.unitTests.csproj", "{74F1C2A7-29D7-4804-A821-782A236129AF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C6E5DEE2-DE11-4799-A624-681C3EEA7943}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

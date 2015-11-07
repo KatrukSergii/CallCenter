@@ -2,37 +2,13 @@
 {
     public abstract class ViewModelBase : DependencyObject, IViewModel
     {
+        private bool isVisible;
         protected readonly IWindowService WindowService;
-        public int WindowId { get; set; }
 
         protected ViewModelBase(IWindowService windowService)
         {
             this.WindowService = windowService;
         }
-
-        public void Show()
-        {
-            if (this.WindowId == 0)
-            {
-                this.WindowService.ShowWindow(this.Type, this);
-            }
-        }
-
-        public void ShowDialog()
-        {
-            if(this.WindowId == 0)
-                this.WindowService.ShowDialogWindow(this.Type, this);
-        }
-
-        public void Close()
-        {
-            if (this.WindowId > 0)
-            {
-                this.WindowService.Close(this.WindowId);
-            }
-        }
-
-        private bool isVisible;
 
         public bool IsVisible
         {
@@ -49,6 +25,30 @@
             }
         }
 
+        public int WindowId { get; set; }
+
+        public void Show()
+        {
+            if (this.WindowId == 0)
+            {
+                this.WindowService.ShowWindow(this.Type, this);
+            }
+        }
+
+        public void ShowDialog()
+        {
+            if (this.WindowId == 0)
+                this.WindowService.ShowDialogWindow(this.Type, this);
+        }
+
+        public void Close()
+        {
+            if (this.WindowId > 0)
+            {
+                this.WindowService.Close(this.WindowId);
+            }
+        }
+
         public void ShowMessage(string caption, string text, MessageType type)
         {
             this.WindowService.ShowMessage(caption, text, type);
@@ -60,5 +60,9 @@
         }
 
         public abstract ViewModelType Type { get; }
+
+        public void Init()
+        {
+        }
     }
 }
