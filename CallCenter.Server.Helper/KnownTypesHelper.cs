@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using CallCenter.Client.SqlStorage.Entities;
 using CallCenter.Common;
+using CallCenter.Common.DataContracts;
 using CallCenter.Common.Entities;
 
 namespace CallCenter.Server.Helper
@@ -30,6 +31,9 @@ namespace CallCenter.Server.Helper
             KnownTypes.AddRange(
                 Assembly.GetAssembly(typeof (Operator))
                     .GetTypes().Where(type => type.GetInterface(interfaceToFindName) != null));
+            KnownTypes.AddRange(
+                Assembly.GetAssembly(typeof(OperatorChatHistoryRecord))
+                    .GetTypes().Where(type => type.GetInterface(interfaceToFindName) != null && type.IsClass));
         }
     }
 }

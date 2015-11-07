@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="CallCenter.Client.SqlStorage"
+                   namespace="CallCenter.Client.SqlStorage.Entities">
+
+  <class name="ChatTopic" table="ChatTopic" lazy="false">
+    <id name="Id" type="int">
+      <generator class="native" />
+    </id>
+    <property name="Date" column="ChangeDate" type="DateTime" />
+    <property name="Topic" type="String" />
+    <many-to-one name="Chat" column="ChatId" class="Chat"/>
+  </class>
+
+	<class name="ChatAction" table="ChatAction" lazy="false">
+		<id name="Id" type="int">
+			<generator class="native" />
+		</id>
+		<property name="ActionDate" type="DateTime" />
+		<property name="ActionType" type="byte" />
+		<many-to-one name="Chat" column="ChatId" class="Chat"/>
+		<many-to-one name="InvokeOperator" column="IvokeOperatorId" class="Operator"/>
+	</class>
+	
+	<class name="Chat" table="Chat" lazy="false">
+		<id name="Id" type="int">
+			<generator class="native" />
+		</id>
+		<bag name="Topics" lazy="false" batch-size="25" cascade="all-delete-orphan">
+			<key column="ChatId" />
+			<one-to-many class="ChatTopic" />
+		</bag>
+		<bag name="ChatActions" lazy="false" batch-size="25" cascade="all-delete-orphan">
+			<key column="ChatId" />
+			<one-to-many class="ChatAction" />
+		</bag>
+	</class>
+</hibernate-mapping>

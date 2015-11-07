@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.ServiceModel;
 using CallCenter.Common.Entities;
-using CallCenter.ServiceContracts;
+using CallCenter.ServiceContracts.Services;
 
 namespace CallCenter.WcfServer.Proxies
 {

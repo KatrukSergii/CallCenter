@@ -19,7 +19,7 @@ namespace CallCenter.Client.SqlStorage.Controllers
         {
             using (ISession session = this.SessionFactory.OpenSession())
             {
-                session.Delete($"from {typeof (T)} where {nameof(IIdentifier.Id)} = {id}");
+                session.Delete(string.Format("from {0} where {1} = {2}", typeof (T), "Id", id));
             }
         }
 
@@ -35,7 +35,7 @@ namespace CallCenter.Client.SqlStorage.Controllers
         {
             using (ISession session = this.SessionFactory.OpenSession())
             {
-                string identifierName = nameof(IIdentifier.Id);
+                string identifierName = "Id";
                 IList<T> operators =
                     session.CreateCriteria(typeof(T))
                         .Add(Restrictions.Eq(identifierName, id))

@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dataContracts="clr-namespace:CallCenter.Common.DataContracts;assembly=CallCenter.Common"
+                    xmlns:client="clr-namespace:CallCenter.Client">
+    <client:EnumToStringConverter x:Key="TestConverter"/>
+    <DataTemplate x:Key="ChatHistoryRecordTemplate" DataType="dataContracts:OperatorChatHistoryRecord">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" TextWrapping="Wrap" Text="{Binding Path=Topic}"/>
+            <TextBlock Grid.Column="1" Text="{Binding Path=CreateDate}"/>
+        </Grid>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="ChatMessageTemplate" DataType="dataContracts:OperatorChatMessage">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="{Binding Path=MessageType, Converter={StaticResource TestConverter}}"/>
+            <TextBlock Grid.Column="1" TextWrapping="Wrap" Text="{Binding Path=Message}"/>
+            <TextBlock Grid.Column="2" Text="{Binding Path=Date}"/>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace CallCenter.Client.ViewModel.Helpers
+﻿namespace CallCenter.Client.ViewModel.Helpers
 {
     public abstract class ViewModelBase : DependencyObject, IViewModel
     {

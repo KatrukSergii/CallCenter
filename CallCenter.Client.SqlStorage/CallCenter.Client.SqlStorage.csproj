@@ -32,7 +32,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -65,15 +65,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControllerFactory.cs" />
+    <Compile Include="Controllers\ControllerFactory.cs" />
     <Compile Include="Controllers\CallCenterController.cs" />
     <Compile Include="Controllers\CampaignController.cs" />
+    <Compile Include="Controllers\ChatOperatorController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\EntityControllerBase.cs" />
     <Compile Include="Controllers\OperatorsController.cs" />
     <Compile Include="Controllers\WcfResolver.cs" />
     <Compile Include="Entities\CallCenter.cs" />
     <Compile Include="Entities\Campaign.cs" />
+    <Compile Include="Entities\Chat.cs" />
+    <Compile Include="Entities\ChatAction.cs" />
+    <Compile Include="Entities\ChatActionParticipant.cs" />
+    <Compile Include="Entities\ChatTopic.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Operator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,6 +111,9 @@
     <Content Include="hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Mappings\ChatEntities.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mappings\Customer.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>

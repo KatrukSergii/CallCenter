@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -42,8 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICustomerReopsitoryService.cs" />
-    <Compile Include="ILoginService.cs" />
+    <Compile Include="DataContracts\ChatMessageType.cs" />
+    <Compile Include="DataContracts\IOperatorChat.cs" />
+    <Compile Include="DataContracts\IOperatorChatHistory.cs" />
+    <Compile Include="DataContracts\IOperatorChatMessage.cs" />
+    <Compile Include="Services\IChatService.cs" />
+    <Compile Include="Services\IReopsitoryServiceBase.cs" />
+    <Compile Include="Services\ILoginService.cs" />
+    <Compile Include="Services\IOperatorRepositoryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
