@@ -1,48 +1,50 @@
-﻿using CallCenter.Client.ViewModel.Helpers;
+﻿using System;
+using CallCenter.Client.ViewModel.Helpers;
 
 namespace CallCenter.Client.ViewModel.ViewModels
 {
     public class SettingWindowViewModel : OkCancelViewModel
     {
         private readonly ISettings settings;
-        private readonly IViewModelFactory viewModelFactory;
+        private string serverName;
+        private int serverPort;
 
-        public SettingWindowViewModel(IViewModelFactory viewModelFactory, IWindowService windowService, ISettings settings) : base(windowService)
+        public SettingWindowViewModel(IWindowService windowService, ISettings settings) : base(windowService)
         {
-            this.viewModelFactory = viewModelFactory;
+            if (windowService == null)
+                throw new ArgumentNullException("windowService");
+            if(settings == null)
+                throw new ArgumentNullException("settings");
+
             this.settings = settings;
+            this.ServerName = this.settings.ServerName;
+            this.ServerPort = this.settings.ServerPort;
         }
 
         public string ServerName
         {
-            get { return this.settings.ServerName; }
+            get
+            {
+                return this.settings.ServerName;
+            }
             set
             {
-                this.settings.ServerName = value;
+                this.serverName = value;
                 this.RaisePropertyChanged();
             }
         }
 
         public int ServerPort
         {
-            get { return this.settings.ServerPort; }
+            get
+            {
+                return this.settings.ServerPort;
+            }
             set
             {
-                this.settings.ServerPort = value;
+                this.serverPort = value;
                 this.RaisePropertyChanged();
             }
-        }
-
-        protected override void OnOkExecuted()
-        {
-            Properties.Settings.Default.ServerName = this.settings.ServerName;
-            Properties.Settings.Default.ServerPort = this.settings.ServerPort;
-            this.Close();
-        }
-
-        protected override void OnCancelExecuted()
-        {
-            this.Close();
         }
 
         public override ViewModelType Type
@@ -51,6 +53,18 @@ namespace CallCenter.Client.ViewModel.ViewModels
             {
                 return ViewModelType.SettingsWindow;
             }
+        }
+
+        protected override void OnOkExecuted(object parameter)
+        {
+            this.settings.ServerName = this.serverName;
+            this.settings.ServerPort = this.serverPort;
+            this.Close();
+        }
+
+        protected override void OnCancelExecuted(object parameter)
+        {
+            this.Close();
         }
     }
 }

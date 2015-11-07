@@ -55,8 +55,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\ChatConversationsViewModel.cs" />
     <Compile Include="ViewModels\ISettings.cs" />
+    <Compile Include="ViewModels\IViewModelBase.cs" />
     <Compile Include="ViewModels\IViewModelFactory.cs" />
     <Compile Include="ViewModels\IWindow.cs" />
     <Compile Include="ViewModels\LoginWindowViewModel.cs" />

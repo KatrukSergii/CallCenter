@@ -1,6 +1,8 @@
-﻿namespace CallCenter.Client.ViewModel.Helpers
+﻿using CallCenter.Client.ViewModel.ViewModels;
+
+namespace CallCenter.Client.ViewModel.Helpers
 {
-    public interface IViewModel
+    public interface IViewModel:IViewModelBase
     {
         void Show();
         void ShowDialog();

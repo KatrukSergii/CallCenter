@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CallCenter.Client.ViewModel.UnitTests</RootNamespace>
     <AssemblyName>CallCenter.Client.ViewModel.UnitTests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,6 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,7 +48,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\CommandTests.cs" />
+    <Compile Include="ViewModels\LoginWindowViewModelTest.cs" />
+    <Compile Include="ViewModels\MainWindowViewModelTests.cs" />
+    <Compile Include="ViewModels\OperatorViewModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\SettingWindowViewModelTests.cs" />
+    <Compile Include="ViewModels\ViewModelBaseTest.cs" />
+    <Compile Include="ViewModels\ViewModelFactoryTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CallCenter.Client.Connector\CallCenter.Client.Communication.csproj">
+      <Project>{d98285f7-53c7-4f8b-a1cb-8905c60a5ab2}</Project>
+      <Name>CallCenter.Client.Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CallCenter.Client.Storage\CallCenter.Common.csproj">
+      <Project>{54840f7e-5e07-483a-aafc-eab04eb50faa}</Project>
+      <Name>CallCenter.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CallCenter.Datacontracts\CallCenter.ServiceContracts.csproj">
+      <Project>{1229476f-6344-4e81-a9a2-7db9d6bfd21c}</Project>
+      <Name>CallCenter.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CallCenterClientViewModel\CallCenter.Client.ViewModel.csproj">
+      <Project>{4c9d70d1-383a-4adf-ab7d-2efc828d7317}</Project>
+      <Name>CallCenter.Client.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,10 +3,11 @@ using System.Windows.Input;
 
 namespace CallCenter.Client.ViewModel.Helpers
 {
-    public class Command<T>:ICommand
+    public class Command<T> : ICommand
     {
+        private readonly Action<T> action;
         private readonly Func<bool> canExecuteFunc;
-        private readonly Action<T> action; 
+
         public Command(Action<T> action, Func<bool> canExecuteFunc = null)
         {
             this.action = action;
@@ -22,9 +23,9 @@ namespace CallCenter.Client.ViewModel.Helpers
 
         public void Execute(object parameter)
         {
-            this.action((T)parameter);
+            this.action((T) parameter);
         }
-        
+
         public event EventHandler CanExecuteChanged;
     }
 }

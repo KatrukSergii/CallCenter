@@ -32,11 +32,6 @@ namespace CallCenter.Client.Communication
             
         }
 
-        public void Login(string AgentNumber)
-        {
-            
-        }
-
         public ILoginService LoginService { get; set; }
         public ICustomerController CustomerRepository { get; set; }
         public IEntityController<IOperator> OperatorController { get; private set; } 

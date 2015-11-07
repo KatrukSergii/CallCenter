@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using CallCenter.Client.Communication;
 using CallCenter.Client.ViewModel.Helpers;
 using CallCenter.Client.ViewModel.ViewModels;
 
@@ -13,8 +14,8 @@ namespace CallCenter.Client
         {
             WindowService windowService = new WindowService();
             IViewModelFactory viewModelFactory = new ViewModelFactory();
-            viewModelFactory.GetLoginViewModel(windowService, new Settings()).Show();
-            //base.OnStartup(e);
+            IConnection connection = new Connection();
+            viewModelFactory.GetLoginViewModel(windowService, new Settings(), connection).Show();
         }
     }
 }

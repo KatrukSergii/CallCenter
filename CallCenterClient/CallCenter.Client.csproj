@@ -125,6 +125,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CallCenter.Client.Connector\CallCenter.Client.Communication.csproj">
+      <Project>{d98285f7-53c7-4f8b-a1cb-8905c60a5ab2}</Project>
+      <Name>CallCenter.Client.Communication</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CallCenter.Client.Core\CallCenter.Client.Core.csproj">
       <Project>{323d5b5f-03a4-4d37-bd90-edbea5243fce}</Project>
       <Name>CallCenter.Client.Core</Name>
