@@ -15,6 +15,7 @@ namespace CallCenter.Client
             WindowService windowService = new WindowService();
             IViewModelFactory viewModelFactory = new ViewModelFactory();
             IConnection connection = new Connection();
+            connection.Connect();
             viewModelFactory.GetLoginViewModel(windowService, new Settings(), connection).Show();
         }
     }
