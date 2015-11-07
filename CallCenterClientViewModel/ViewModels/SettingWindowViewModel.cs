@@ -45,6 +45,12 @@ namespace CallCenter.Client.ViewModel.ViewModels
             this.Close();
         }
 
-        public override ViewModelType Type=>ViewModelType.SettingsWindow;
+        public override ViewModelType Type
+        {
+            get
+            {
+                return ViewModelType.SettingsWindow;
+            }
+        }
     }
 }

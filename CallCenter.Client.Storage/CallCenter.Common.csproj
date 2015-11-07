@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -46,13 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\IChatOperatorController.cs" />
+    <Compile Include="Controllers\IChatController.cs" />
     <Compile Include="Controllers\IEntityController.cs" />
+    <Compile Include="DataContracts\ChatMessageType.cs" />
+    <Compile Include="DataContracts\IOperatorChat.cs" />
+    <Compile Include="DataContracts\IOperatorChatHistory.cs" />
+    <Compile Include="DataContracts\IOperatorChatMessage.cs" />
+    <Compile Include="DataContracts\OperatorChatHistoryRecord.cs" />
+    <Compile Include="DataContracts\OperatorChatMessage.cs" />
+    <Compile Include="Entities\ChatActionType.cs" />
     <Compile Include="Entities\CustomerStatus.cs" />
     <Compile Include="Entities\ICallCenter.cs" />
     <Compile Include="Controllers\ICallCenterController.cs" />
     <Compile Include="Entities\ICampaign.cs" />
     <Compile Include="Controllers\ICampaignController.cs" />
     <Compile Include="Controllers\IControllerFactory.cs" />
+    <Compile Include="Entities\IChat.cs" />
+    <Compile Include="Entities\IChatAction.cs" />
+    <Compile Include="Entities\IChatActionParticipant.cs" />
+    <Compile Include="Entities\IChatTopic.cs" />
     <Compile Include="Entities\ICustomer.cs" />
     <Compile Include="Controllers\ICustomerController.cs" />
     <Compile Include="Entities\IIdentifier.cs" />

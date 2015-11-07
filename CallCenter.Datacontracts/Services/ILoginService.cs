@@ -2,7 +2,7 @@
 using CallCenter.Common.Entities;
 using CallCenter.Server.Helper;
 
-namespace CallCenter.ServiceContracts
+namespace CallCenter.ServiceContracts.Services
 {
     [ServiceContract]
     [ServiceKnownType("GetKnownTypes", typeof(KnownTypesHelper))]
@@ -14,6 +14,5 @@ namespace CallCenter.ServiceContracts
 
         [OperationContract]
         void LogOut(string number);
-
     }
 }

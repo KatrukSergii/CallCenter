@@ -7,6 +7,7 @@
         ChatWindow = 2,
         SearchWindow = 3,
         OrderWindow = 4,
-        SettingsWindow = 5
+        SettingsWindow = 5,
+        OperatorsWindow = 6
     }
 }

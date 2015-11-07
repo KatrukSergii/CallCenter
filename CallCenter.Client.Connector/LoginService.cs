@@ -1,6 +1,5 @@
-﻿using CallCenter.Common;
-using CallCenter.Common.Entities;
-using CallCenter.ServiceContracts;
+﻿using CallCenter.Common.Entities;
+using CallCenter.ServiceContracts.Services;
 
 namespace CallCenter.Client.Communication
 {

@@ -6,5 +6,6 @@ namespace CallCenter.Common.Controllers
         ICallCenterController CallCenterController { get; }
         ICampaignController CampaignController { get; }
         ICustomerController CustomerController { get; }
+        IChatOperatorController ChatOperatorController { get; }
 }
 }

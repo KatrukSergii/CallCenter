@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallCenter.Client", "CallCenterClient\CallCenter.Client.csproj", "{12C6E199-4816-41F9-AB26-7A7862A8FFB4}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -35,6 +35,24 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallCenter.Client.ViewModel", "CallCenterClientViewModel\CallCenter.Client.ViewModel.csproj", "{4C9D70D1-383A-4ADF-AB7D-2EFC828D7317}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WpfClient", "WpfClient", "{7E940EBD-09EA-4A1D-8E80-59CEB7D77A0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallCenter.Client.ViewModel.UnitTests", "CallCenter.Client.ViewModel.UnitTest\CallCenter.Client.ViewModel.UnitTests.csproj", "{14B4B8C7-A473-4E4B-B847-77D67B9159FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallCenter.Client.UnitTests", "CallCenter.Client.UnitTests\CallCenter.Client.UnitTests.csproj", "{9D173B76-CCC4-40FB-BE53-3642112C3094}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallCenter.Client.Communication.UnitTests", "CallCenter.Client.Communication.UnitTests\CallCenter.Client.Communication.UnitTests.csproj", "{348D3237-0A24-499E-8E6B-1B4D2ECFD982}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallCenter.Client.Core.UnitTest", "CallCenter.Client.Core.UnitTest\CallCenter.Client.Core.UnitTest.csproj", "{2B7E23A5-CBE1-46D4-9369-3CA0D3FE66D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallCenter.Common.UnitTests", "CallCenter.client.Common.UnitTests\CallCenter.Common.UnitTests.csproj", "{1BBC0950-0CFF-452B-8917-7443CF78572B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallCenter.Server.UnitTests", "CallCenter.Server.UnitTests\CallCenter.Server.UnitTests.csproj", "{7BB465F0-6862-4DFA-8614-88D58311143E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallCenter.WcfServer.Proxies.UnitTests", "CallCenter.WcfServices.Proxies.UnitTests\CallCenter.WcfServer.Proxies.UnitTests.csproj", "{F082F27B-44DB-4592-99C0-10C859B84222}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallCenter.WcfService.UnitTests", "CallCenter.WcfService.UnitTests\CallCenter.WcfService.UnitTests.csproj", "{2E84CE4E-952C-4BDA-9CE6-1CD03F3F0953}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallCenter.WcfService.ConsoleHost.unitTests", "CallCenter.WcfService.ConsoleHost.unitTests\CallCenter.WcfService.ConsoleHost.unitTests.csproj", "{74F1C2A7-29D7-4804-A821-782A236129AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -90,6 +108,42 @@ Global
 		{4C9D70D1-383A-4ADF-AB7D-2EFC828D7317}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C9D70D1-383A-4ADF-AB7D-2EFC828D7317}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C9D70D1-383A-4ADF-AB7D-2EFC828D7317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14B4B8C7-A473-4E4B-B847-77D67B9159FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14B4B8C7-A473-4E4B-B847-77D67B9159FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14B4B8C7-A473-4E4B-B847-77D67B9159FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14B4B8C7-A473-4E4B-B847-77D67B9159FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D173B76-CCC4-40FB-BE53-3642112C3094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D173B76-CCC4-40FB-BE53-3642112C3094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D173B76-CCC4-40FB-BE53-3642112C3094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D173B76-CCC4-40FB-BE53-3642112C3094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{348D3237-0A24-499E-8E6B-1B4D2ECFD982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{348D3237-0A24-499E-8E6B-1B4D2ECFD982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{348D3237-0A24-499E-8E6B-1B4D2ECFD982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{348D3237-0A24-499E-8E6B-1B4D2ECFD982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B7E23A5-CBE1-46D4-9369-3CA0D3FE66D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B7E23A5-CBE1-46D4-9369-3CA0D3FE66D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B7E23A5-CBE1-46D4-9369-3CA0D3FE66D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B7E23A5-CBE1-46D4-9369-3CA0D3FE66D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BBC0950-0CFF-452B-8917-7443CF78572B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BBC0950-0CFF-452B-8917-7443CF78572B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BBC0950-0CFF-452B-8917-7443CF78572B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BBC0950-0CFF-452B-8917-7443CF78572B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BB465F0-6862-4DFA-8614-88D58311143E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BB465F0-6862-4DFA-8614-88D58311143E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BB465F0-6862-4DFA-8614-88D58311143E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BB465F0-6862-4DFA-8614-88D58311143E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F082F27B-44DB-4592-99C0-10C859B84222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F082F27B-44DB-4592-99C0-10C859B84222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F082F27B-44DB-4592-99C0-10C859B84222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F082F27B-44DB-4592-99C0-10C859B84222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E84CE4E-952C-4BDA-9CE6-1CD03F3F0953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E84CE4E-952C-4BDA-9CE6-1CD03F3F0953}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E84CE4E-952C-4BDA-9CE6-1CD03F3F0953}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E84CE4E-952C-4BDA-9CE6-1CD03F3F0953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74F1C2A7-29D7-4804-A821-782A236129AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74F1C2A7-29D7-4804-A821-782A236129AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74F1C2A7-29D7-4804-A821-782A236129AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74F1C2A7-29D7-4804-A821-782A236129AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,5 +151,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{12C6E199-4816-41F9-AB26-7A7862A8FFB4} = {7E940EBD-09EA-4A1D-8E80-59CEB7D77A0B}
 		{4C9D70D1-383A-4ADF-AB7D-2EFC828D7317} = {7E940EBD-09EA-4A1D-8E80-59CEB7D77A0B}
+		{14B4B8C7-A473-4E4B-B847-77D67B9159FE} = {7E940EBD-09EA-4A1D-8E80-59CEB7D77A0B}
+		{9D173B76-CCC4-40FB-BE53-3642112C3094} = {7E940EBD-09EA-4A1D-8E80-59CEB7D77A0B}
 	EndGlobalSection
 EndGlobal

@@ -5,11 +5,23 @@ namespace CallCenter.Client.ViewModel.ViewModels
 {
     public class LoginWindowViewModel: OkCancelViewModel
     {
-        public Command<string> LoginCommand => new Command<string>(this.Login);
+        public Command<string> LoginCommand
+        {
+            get
+            {
+                return new Command<string>(this.Login);
+            }
+        }
 
         private readonly ISettings settings;
-        
-        public SimpleCommand SettingsCommand => new SimpleCommand(this.OpenSetings);
+
+        public SimpleCommand SettingsCommand
+        {
+            get
+            {
+                return new SimpleCommand(this.OpenSetings);
+            }
+        }
 
         private void OpenSetings(object parameter)
         {
@@ -60,6 +72,12 @@ namespace CallCenter.Client.ViewModel.ViewModels
             this.Close();
         }
 
-        public override ViewModelType Type => ViewModelType.LoginWindow;
+        public override ViewModelType Type
+        {
+            get
+            {
+                return ViewModelType.LoginWindow;
+            }
+        }
     }
 }

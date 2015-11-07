@@ -7,8 +7,21 @@ namespace CallCenter.Client.ViewModel.ViewModels
         protected abstract void OnOkExecuted();
         protected abstract void OnCancelExecuted();
 
-        public SimpleCommand OkCommand => new SimpleCommand(this.Save);
-        public SimpleCommand CancelCommand => new SimpleCommand(this.Cancel);
+        public SimpleCommand OkCommand
+        {
+            get
+            {
+                return new SimpleCommand(this.Save);
+            }
+        }
+
+        public SimpleCommand CancelCommand
+        {
+            get
+            {
+                return new SimpleCommand(this.Cancel);
+            }
+        }
 
         private void Cancel(object obj)
         {

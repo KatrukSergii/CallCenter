@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using CallCenter.Client.ViewModel.Helpers;
-using CallCenter.Client.ViewModel.ViewModels;
 using CallCenter.Client.Windows;
 
 namespace CallCenter.Client
 {
-    //TODO: correct implementation is needed.
     public class WindowService:IWindowService
     {
         private readonly IDictionary<int, Window> windows;
@@ -28,16 +25,16 @@ namespace CallCenter.Client
             switch (type)
             {
                 case ViewModelType.LoginWindow:
-                    window = new LoginWindow();
+                    window = new LoginWindow {DataContext = viewModel};
                     break;
                 case ViewModelType.MainWindow:
-                    window = new MainWindow();
+                    window = new MainWindow {DataContext = viewModel};
                     break;
                 case ViewModelType.SettingsWindow:
-                    window = new SettignsWindow();
+                    window = new SettignsWindow { DataContext = viewModel };
                     break;
                 default:
-                    window = new Window();
+                    window = new Window { DataContext = viewModel };
                     break;
             }
 
