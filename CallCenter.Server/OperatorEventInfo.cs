@@ -1,3 +1,4 @@
+using System;
 using CallCenter.Common;
 
 namespace CallCenter.Server
@@ -6,6 +7,12 @@ namespace CallCenter.Server
     {
         public OperatorEventInfo(string operatorNumber, EventReason reason, IHostInfo hostInfo)
         {
+            if(string.IsNullOrWhiteSpace(operatorNumber))
+                throw new ArgumentNullException("operatorNumber");
+
+            if (hostInfo == null)
+                throw new ArgumentNullException("hostInfo");
+
             this.HostInfo = hostInfo;
             this.OperatorNumber = operatorNumber;
             this.Reason = reason;

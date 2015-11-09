@@ -1,4 +1,5 @@
-﻿using CallCenter.Common;
+﻿using System;
+using CallCenter.Common;
 
 namespace CallCenter.Server
 {
@@ -7,6 +8,8 @@ namespace CallCenter.Server
 
         public Message(string text, IMessageInfo messageInfo)
         {
+            if(messageInfo == null)
+                throw new ArgumentNullException("messageInfo");
             this.Text = text;
             this.MessageInfo = messageInfo;
         }

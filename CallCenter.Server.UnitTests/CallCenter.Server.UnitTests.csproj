@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CallCenter.Server.UnitTests</RootNamespace>
     <AssemblyName>CallCenter.Server.UnitTests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,10 +48,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HostInfoTests.cs" />
+    <Compile Include="MessageInfoTests.cs" />
+    <Compile Include="MessageTests.cs" />
+    <Compile Include="OperatorEventInfoTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CallCenter.Client.Storage\CallCenter.Common.csproj">
+      <Project>{54840f7e-5e07-483a-aafc-eab04eb50faa}</Project>
+      <Name>CallCenter.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CallCenter.Server\CallCenter.Server.csproj">
+      <Project>{0828d6b7-59a4-4cf9-b501-9a4e36b27c64}</Project>
+      <Name>CallCenter.Server</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
