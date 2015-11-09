@@ -25,7 +25,7 @@ namespace CallCenter.Client.ViewModel.ViewModels
         {
             get
             {
-                return this.settings.ServerName;
+                return this.serverName;
             }
             set
             {
@@ -38,7 +38,7 @@ namespace CallCenter.Client.ViewModel.ViewModels
         {
             get
             {
-                return this.settings.ServerPort;
+                return this.serverPort;
             }
             set
             {

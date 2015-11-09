@@ -26,7 +26,8 @@ namespace CallCenter.Client.ViewModel.UnitTests.ViewModels
         {
             string serverName = "serverName";
             this.settings.Setup(settings1 => settings1.ServerName).Returns(serverName);
-            Assert.AreEqual(serverName, this.settingsViewModel.ServerName);
+            SettingWindowViewModel settingsViewModelToTest = new SettingWindowViewModel(this.WindowService.Object, this.settings.Object);
+            Assert.AreEqual(serverName, settingsViewModelToTest.ServerName);
         }
 
         [Test]
@@ -41,10 +42,14 @@ namespace CallCenter.Client.ViewModel.UnitTests.ViewModels
         [Test]
         public void TestServerNameWasSaved()
         {
+            Mock<ISettings> settings1 = new Mock<ISettings>();
+            
+            SettingWindowViewModel settingsViewModel1 = new SettingWindowViewModel(Mock.Of<IWindowService>(), settings1.Object);
             string serverName = "ServerName";
-            this.settingsViewModel.ServerName = serverName;
-            this.settingsViewModel.OkCommand.Execute(null);
-            this.settings.VerifySet(settings1 => settings1.ServerName = serverName, Times.AtLeastOnce);
+            settingsViewModel1.ServerName = serverName;
+            
+            settingsViewModel1.OkCommand.Execute(null);
+            settings1.VerifySet(settings2 => settings2.ServerName);
         }
 
         [Test]
@@ -52,7 +57,8 @@ namespace CallCenter.Client.ViewModel.UnitTests.ViewModels
         {
             int serverPort = 8080;
             this.settings.Setup(settings1 => settings1.ServerPort).Returns(serverPort);
-            Assert.AreEqual(serverPort, this.settingsViewModel.ServerPort);
+            SettingWindowViewModel settingsViewModelToTest = new SettingWindowViewModel(this.WindowService.Object, this.settings.Object);
+            Assert.AreEqual(serverPort, settingsViewModelToTest.ServerPort);
         }
 
         [Test]
@@ -70,7 +76,7 @@ namespace CallCenter.Client.ViewModel.UnitTests.ViewModels
             int serverPort = 8080;
             this.settingsViewModel.ServerPort = serverPort;
             this.settingsViewModel.OkCommand.Execute(null);
-            this.settings.VerifySet(settings1 => settings1.ServerPort = serverPort, Times.AtLeastOnce);
+            this.settings.VerifySet(settings1 => settings1.ServerPort);
         }
 
         [ExpectedException(typeof (ArgumentNullException))]

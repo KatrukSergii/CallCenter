@@ -45,8 +45,6 @@
     <Compile Include="Message.cs" />
     <Compile Include="MessageInfo.cs" />
     <Compile Include="OperatorEventInfo.cs" />
-    <Compile Include="OperatorService.cs" />
-    <Compile Include="Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

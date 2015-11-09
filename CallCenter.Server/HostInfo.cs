@@ -1,3 +1,4 @@
+using System;
 using CallCenter.Common;
 
 namespace CallCenter.Server
@@ -6,6 +7,9 @@ namespace CallCenter.Server
     {
         public HostInfo(string hostName)
         {
+            if(string.IsNullOrWhiteSpace(hostName))
+                throw new ArgumentNullException("hostName");
+
             this.HostName = hostName;
         }
         public string HostName { get; set; }

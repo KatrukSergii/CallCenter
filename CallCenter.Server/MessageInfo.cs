@@ -1,4 +1,5 @@
-﻿using CallCenter.Common;
+﻿using System;
+using CallCenter.Common;
 
 namespace CallCenter.Server
 {
@@ -7,6 +8,12 @@ namespace CallCenter.Server
 
         public MessageInfo(int fromId, int toId)
         {
+            if(fromId < 0)
+                throw new ArgumentException();
+
+            if (toId < 0)
+                throw new ArgumentException();
+
             this.FromId = fromId;
             this.ToId = toId;
         }
