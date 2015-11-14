@@ -1,8 +1,8 @@
 ﻿using CallCenter.Client.SqlStorage;
 using CallCenter.Client.SqlStorage.Entities;
 using CallCenter.Common;
-using CallCenter.Common.Controllers;
 using CallCenter.Common.Entities;
+using CallCenterRepository.Controllers;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;

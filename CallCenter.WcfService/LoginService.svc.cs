@@ -1,22 +1,22 @@
-﻿using CallCenter.Common.Controllers;
+﻿using System;
+using CallCenter.Common;
 using CallCenter.Common.Entities;
-using CallCenter.Server.Helper;
-using CallCenter.ServiceContracts;
 using CallCenter.ServiceContracts.Services;
 
 namespace CallCenter.WcfService
 {
-    public class LoginService : ILoginService
+    public class OpeartorEventsProcessorService : ServiceBase, IOperatorEventProcessorService
     {
-        public IOperator Login(string number)
+        public OpeartorEventsProcessorService(IServerEventsProcessor serverEventsProcessor) : base(serverEventsProcessor)
         {
-            IControllerFactory controllerFactory = Resolver.Resolve<IControllerFactory>();
-            return controllerFactory.OperatorsController.GetByNumber(number);
         }
 
-        public void LogOut(string number)
+        public IOperator ChangeOperatorState(IOperatorEventInfo eventInfo)
         {
-            
+            if (eventInfo == null)
+                throw new ArgumentNullException("eventInfo");
+
+            return this.ServerEventsProcessor.OperatorProcessor.ChangeOperatorState(eventInfo);
         }
     }
 }

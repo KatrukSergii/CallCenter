@@ -57,6 +57,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C6E5DE
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallCenter.Repository", "CallCenterRepository\CallCenter.Repository.csproj", "{371BFBBE-8FEC-43B3-A4D4-8DC1FA814A5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -143,6 +145,10 @@ Global
 		{2E84CE4E-952C-4BDA-9CE6-1CD03F3F0953}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E84CE4E-952C-4BDA-9CE6-1CD03F3F0953}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E84CE4E-952C-4BDA-9CE6-1CD03F3F0953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{371BFBBE-8FEC-43B3-A4D4-8DC1FA814A5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{371BFBBE-8FEC-43B3-A4D4-8DC1FA814A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{371BFBBE-8FEC-43B3-A4D4-8DC1FA814A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{371BFBBE-8FEC-43B3-A4D4-8DC1FA814A5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

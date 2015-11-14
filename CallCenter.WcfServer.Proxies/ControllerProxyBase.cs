@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
-using CallCenter.Common.Controllers;
+using CallCenterRepository.Controllers;
 
 namespace CallCenter.WcfServer.Proxies
 {

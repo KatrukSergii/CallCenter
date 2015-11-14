@@ -1,6 +1,8 @@
-﻿namespace CallCenter.Common
+﻿using CallCenter.Common.Entities;
+
+namespace CallCenter.Common
 {
-    public interface IHostInfo
+    public interface IHostInfo: ISerializable
     {
         string HostName { get; set; }
     }

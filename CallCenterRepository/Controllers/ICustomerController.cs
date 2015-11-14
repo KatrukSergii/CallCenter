@@ -1,6 +1,6 @@
 ﻿using CallCenter.Common.Entities;
 
-namespace CallCenter.Common.Controllers
+namespace CallCenterRepository.Controllers
 {
     public interface ICustomerController:IEntityController<ICustomer>
     {

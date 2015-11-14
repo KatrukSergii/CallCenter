@@ -41,16 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HostInfo.cs" />
-    <Compile Include="Message.cs" />
-    <Compile Include="MessageInfo.cs" />
-    <Compile Include="OperatorEventInfo.cs" />
+    <Compile Include="ChatProcessor.cs" />
+    <Compile Include="OperatorProcessor.cs" />
+    <Compile Include="ProcessorBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerEventsProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CallCenter.Client.Storage\CallCenter.Common.csproj">
       <Project>{54840f7e-5e07-483a-aafc-eab04eb50faa}</Project>
       <Name>CallCenter.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CallCenter.Server.Helper\CallCenter.Server.Helper.csproj">
+      <Project>{50b10877-3893-4054-a429-3889f468bde7}</Project>
+      <Name>CallCenter.Server.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CallCenterRepository\CallCenter.Repository.csproj">
+      <Project>{371bfbbe-8fec-43b3-a4d4-8dc1fa814a5b}</Project>
+      <Name>CallCenter.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

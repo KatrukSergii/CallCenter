@@ -1,7 +1,5 @@
-﻿using CallCenter.Common;
-using CallCenter.Common.Controllers;
-using CallCenter.ServiceContracts;
-using CallCenter.ServiceContracts.Services;
+﻿using CallCenter.ServiceContracts.Services;
+using CallCenterRepository.Controllers;
 
 namespace CallCenter.Client.Communication
 {
@@ -9,7 +7,7 @@ namespace CallCenter.Client.Communication
     {
         void Connect();
         void Disconncet();
-        ILoginService LoginService { get; set; }
+        IOperatorEventProcessorService OperatorEventProcessorService { get; set; }
         ICustomerController CustomerRepository { get; set; }
         IChatService ChatService { get; }
     }

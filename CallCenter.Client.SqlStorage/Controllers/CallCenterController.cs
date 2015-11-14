@@ -1,5 +1,5 @@
-﻿using CallCenter.Common.Controllers;
-using CallCenter.Common.Entities;
+﻿using CallCenter.Common.Entities;
+using CallCenterRepository.Controllers;
 using NHibernate;
 
 namespace CallCenter.Client.SqlStorage.Controllers

@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 using System.Diagnostics;
 using CallCenter.Client.SqlStorage.Controllers;
-using CallCenter.Common.Controllers;
+using CallCenterRepository.Controllers;
 using NHibernate;
 using NHibernate.Cfg;
 

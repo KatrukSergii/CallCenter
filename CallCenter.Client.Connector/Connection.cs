@@ -1,8 +1,8 @@
-﻿using CallCenter.Common.Controllers;
-using CallCenter.Common.Entities;
+﻿using CallCenter.Common.Entities;
 using CallCenter.ServiceContracts;
 using CallCenter.ServiceContracts.Services;
 using CallCenter.WcfServer.Proxies;
+using CallCenterRepository.Controllers;
 
 namespace CallCenter.Client.Communication
 {
@@ -19,7 +19,7 @@ namespace CallCenter.Client.Communication
 
         public void Connect()
         {
-            this.LoginService = new LoginService(new LoginClient());
+            this.OperatorEventProcessorService = new OperatorEventProcessorService(new OperatorEventProcessorClient());
             this.ChatService = new ChatServiceProxy();
             //this.CustomerRepository = new CustomerControllerProxy();
             //this.OperatorController = new ControllerProxyBase<IOperator>();
@@ -32,7 +32,7 @@ namespace CallCenter.Client.Communication
             
         }
 
-        public ILoginService LoginService { get; set; }
+        public IOperatorEventProcessorService OperatorEventProcessorService { get; set; }
         public ICustomerController CustomerRepository { get; set; }
         public IEntityController<IOperator> OperatorController { get; private set; } 
         public IEntityController<ICallCenter> CallCenterController { get; private set; }

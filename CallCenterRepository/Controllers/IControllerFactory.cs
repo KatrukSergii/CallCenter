@@ -1,4 +1,4 @@
-namespace CallCenter.Common.Controllers
+namespace CallCenterRepository.Controllers
 {
     public interface IControllerFactory
     {

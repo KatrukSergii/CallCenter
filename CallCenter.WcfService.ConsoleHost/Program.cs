@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ServiceModel;
-using System.ServiceModel.Description;
+using CallCenter.ServiceContracts.Services;
 
 namespace CallCenter.WcfService.ConsoleHost
 {
@@ -8,10 +8,8 @@ namespace CallCenter.WcfService.ConsoleHost
     {
         static void Main(string[] args)
         {
-            ServiceHost loginService = new ServiceHost(typeof(LoginService));
-            loginService.Open();
-            ServiceHost chatService = new ServiceHost(typeof(ChatService));
-            chatService.Open();
+            ServiceHostRunner.StartServiceHost<OpeartorEventsProcessorService, IOperatorEventProcessorService>("net.tcp://localhost:8009/OperatorEventProcessorService", new NetTcpBinding());
+            ServiceHostRunner.StartServiceHost<ChatService, IChatService>("net.tcp://localhost:8009/ChatService", new NetTcpBinding());
             Console.WriteLine("Services started. Press [Enter] to exit.");
             Console.ReadLine();
         }

@@ -93,6 +93,10 @@
       <Project>{54840f7e-5e07-483a-aafc-eab04eb50faa}</Project>
       <Name>CallCenter.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CallCenterRepository\CallCenter.Repository.csproj">
+      <Project>{371bfbbe-8fec-43b3-a4d4-8dc1fa814a5b}</Project>
+      <Name>CallCenter.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

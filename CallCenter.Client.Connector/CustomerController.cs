@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using CallCenter.Common.Controllers;
 using CallCenter.Common.Entities;
+using CallCenterRepository.Controllers;
 
 namespace CallCenter.Client.Communication
 {

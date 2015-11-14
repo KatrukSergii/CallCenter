@@ -48,7 +48,7 @@
     <Compile Include="DataContracts\IOperatorChatMessage.cs" />
     <Compile Include="Services\IChatService.cs" />
     <Compile Include="Services\IReopsitoryServiceBase.cs" />
-    <Compile Include="Services\ILoginService.cs" />
+    <Compile Include="Services\IOperatorEventProcessorService.cs" />
     <Compile Include="Services\IOperatorRepositoryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

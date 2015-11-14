@@ -11,9 +11,4 @@ namespace CallCenter.ServiceContracts.Services
         [OperationContract]
         IOperator GetByNumber(string number);
     }
-
-    public interface IChatController
-    {
-        
-    }
 }

@@ -2,6 +2,7 @@
 using CallCenter.Client.Communication;
 using CallCenter.Client.ViewModel.Helpers;
 using CallCenter.Client.ViewModel.ViewModels;
+using CallCenter.Common;
 using CallCenter.Common.Entities;
 using CallCenter.ServiceContracts.Services;
 using Moq;
@@ -14,8 +15,9 @@ namespace CallCenter.Client.ViewModel.UnitTests.ViewModels
     {
         private Mock<ISettings> settings;
         private Mock<IConnection> connection;
-        private Mock<ILoginService> logiService;
+        private Mock<IOperatorEventProcessorService> logiService;
         private Mock<IOperator> @operator;
+        private Mock<IOperatorEventInfo> @operatorEventInfo;
         private Mock<IViewModelFactory> viewModelFactory;
         private Mock<IViewModel> mainWindow;
         private string operatorNumber;
@@ -26,13 +28,14 @@ namespace CallCenter.Client.ViewModel.UnitTests.ViewModels
         {
             this.settings = new Mock<ISettings>();
             this.connection = new Mock<IConnection>();
-            this.logiService = new Mock<ILoginService>();
+            this.logiService = new Mock<IOperatorEventProcessorService>();
             this.@operator = new Mock<IOperator>();
             this.viewModelFactory = new Mock<IViewModelFactory>();
             this.WindowService = new Mock<IWindowService>();
             this.mainWindow = new Mock<IViewModel>();
-            this.connection.Setup(connection1 => connection1.LoginService).Returns(this.logiService.Object);
-            this.logiService.Setup(service => service.Login(this.operatorNumber)).Returns(this.@operator.Object);
+            this.@operatorEventInfo = new Mock<IOperatorEventInfo>();
+            this.connection.Setup(connection1 => connection1.OperatorEventProcessorService).Returns(this.logiService.Object);
+            this.logiService.Setup(service => service.ChangeOperatorState(this.operatorEventInfo.Object)).Returns(this.@operator.Object);
             this.viewModelFactory.Setup(
                 factory =>
                     factory.GetMainViewModel(this.WindowService.Object, this.settings.Object, this.connection.Object,
@@ -76,7 +79,7 @@ namespace CallCenter.Client.ViewModel.UnitTests.ViewModels
         {
             this.loginWindowViewModel.LoginCommand.Execute(this.operatorNumber);
 
-            this.connection.Verify(connection1 => connection1.LoginService, Times.Once);
+            this.connection.Verify(connection1 => connection1.OperatorEventProcessorService, Times.Once);
         }
 
         [Test]
@@ -84,17 +87,9 @@ namespace CallCenter.Client.ViewModel.UnitTests.ViewModels
         {
             this.loginWindowViewModel.LoginCommand.Execute(string.Empty);
 
-            this.connection.Verify(connection1 => connection1.LoginService, Times.Once);
+            this.connection.Verify(connection1 => connection1.OperatorEventProcessorService, Times.Never);
         }
-
-        [Test]
-        public void TestLoginCommandLoginServiceLoginWasCalled()
-        {
-            this.loginWindowViewModel.LoginCommand.Execute(this.operatorNumber);
-
-            this.logiService.Verify(service => service.Login(this.operatorNumber), Times.Once);
-        }
-
+        
         [Test]
         public void TestLoginCommandLoginServiceLoginWasNotCalled()
         {
@@ -109,7 +104,7 @@ namespace CallCenter.Client.ViewModel.UnitTests.ViewModels
         [Test]
         public void TestLoginCommandLoginServiceLoginWasNotCalledWhenException()
         {
-            this.logiService.Setup(service => service.Login(It.IsAny<string>())).Throws(new ArgumentNullException());
+            this.logiService.Setup(service => service.ChangeOperatorState(It.IsAny<IOperatorEventInfo>())).Throws(new ArgumentNullException());
             this.loginWindowViewModel.LoginCommand.Execute(null);
 
             this.viewModelFactory.Verify(

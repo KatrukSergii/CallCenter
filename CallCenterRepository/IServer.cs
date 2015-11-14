@@ -1,4 +1,4 @@
-﻿namespace CallCenter.Common
+﻿namespace CallCenterRepository
 {
     public interface IServer
     {

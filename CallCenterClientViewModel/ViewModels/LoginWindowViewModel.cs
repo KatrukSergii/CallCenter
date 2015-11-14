@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using CallCenter.Client.Communication;
 using CallCenter.Client.ViewModel.Helpers;
+using CallCenter.Common;
 using CallCenter.Common.Entities;
 
 namespace CallCenter.Client.ViewModel.ViewModels
@@ -77,11 +78,13 @@ namespace CallCenter.Client.ViewModel.ViewModels
 
         private void Login(string agentNumber)
         {
-            string number = string.IsNullOrEmpty(agentNumber) ? this.operatorNumber : agentNumber;
+            if(string.IsNullOrWhiteSpace(agentNumber))
+                return;
+
             IOperator @operator;
             try
             {
-                @operator = this.connection.LoginService.Login(number);
+                @operator = this.connection.OperatorEventProcessorService.ChangeOperatorState(new OperatorEventInfo(agentNumber, EventReason.Login, "ws78"));
             }
             catch (Exception)
             {

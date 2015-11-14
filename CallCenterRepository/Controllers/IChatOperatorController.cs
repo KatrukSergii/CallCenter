@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using CallCenter.Common.DataContracts;
 
-namespace CallCenter.Common.Controllers
+namespace CallCenterRepository.Controllers
 {
     public interface IChatOperatorController
     {
