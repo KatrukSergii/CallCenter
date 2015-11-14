@@ -45,7 +45,7 @@
     <Compile Include="Connection.cs" />
     <Compile Include="CustomerController.cs" />
     <Compile Include="IConnection.cs" />
-    <Compile Include="LoginService.cs" />
+    <Compile Include="OperatorEventProcessorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -65,6 +65,10 @@
     <ProjectReference Include="..\CallCenter.WcfServer.Proxies\CallCenter.WcfServer.Proxies.csproj">
       <Project>{72dca34c-9159-43a0-ac54-1818279987f8}</Project>
       <Name>CallCenter.WcfServer.Proxies</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CallCenterRepository\CallCenter.Repository.csproj">
+      <Project>{371bfbbe-8fec-43b3-a4d4-8dc1fa814a5b}</Project>
+      <Name>CallCenter.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

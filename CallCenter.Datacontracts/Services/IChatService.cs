@@ -12,6 +12,5 @@ namespace CallCenter.ServiceContracts.Services
     {
         [OperationContract]
         IEnumerable<IOperatorChatHistoryRecord> GetChatHistory(int agentId, DateTime fromDate, int count);
-        IEnumerable<IOperatorChatMessage> GetChatMessages(int chatId, DateTime fromDate, int count);
     }
 }

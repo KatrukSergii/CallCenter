@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="CallCenter.WcfService.LoginService" CodeBehind="LoginService.svc.cs" %>

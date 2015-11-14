@@ -1,6 +1,7 @@
-﻿using CallCenter.Common.Controllers;
+﻿using CallCenter.Common;
+using CallCenterRepository.Controllers;
 
-namespace CallCenter.Common
+namespace CallCenterRepository
 {
     public interface IOperatorService:IOperatorsController
     {

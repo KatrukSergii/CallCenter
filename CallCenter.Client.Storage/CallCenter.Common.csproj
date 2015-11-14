@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CallCenter.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CallCenter.WcfService\Bin\CallCenter.Common.dll</HintPath>
+    </Reference>
     <Reference Include="NHibernate">
       <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
     </Reference>
@@ -46,9 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\IChatOperatorController.cs" />
-    <Compile Include="Controllers\IChatController.cs" />
-    <Compile Include="Controllers\IEntityController.cs" />
     <Compile Include="DataContracts\ChatMessageType.cs" />
     <Compile Include="DataContracts\IOperatorChat.cs" />
     <Compile Include="DataContracts\IOperatorChatHistory.cs" />
@@ -58,27 +59,25 @@
     <Compile Include="Entities\ChatActionType.cs" />
     <Compile Include="Entities\CustomerStatus.cs" />
     <Compile Include="Entities\ICallCenter.cs" />
-    <Compile Include="Controllers\ICallCenterController.cs" />
     <Compile Include="Entities\ICampaign.cs" />
-    <Compile Include="Controllers\ICampaignController.cs" />
-    <Compile Include="Controllers\IControllerFactory.cs" />
     <Compile Include="Entities\IChat.cs" />
     <Compile Include="Entities\IChatAction.cs" />
     <Compile Include="Entities\IChatActionParticipant.cs" />
     <Compile Include="Entities\IChatTopic.cs" />
     <Compile Include="Entities\ICustomer.cs" />
-    <Compile Include="Controllers\ICustomerController.cs" />
     <Compile Include="Entities\IIdentifier.cs" />
     <Compile Include="Entities\IOperator.cs" />
-    <Compile Include="Controllers\IOperatorsController.cs" />
     <Compile Include="Entities\ISerializable.cs" />
     <Compile Include="EventReason.cs" />
+    <Compile Include="HostInfo.cs" />
+    <Compile Include="IChatProcessor.cs" />
     <Compile Include="IHostInfo.cs" />
     <Compile Include="IMessage.cs" />
     <Compile Include="IMessageInfo.cs" />
     <Compile Include="IOperatorEventInfo.cs" />
-    <Compile Include="IOperatorService.cs" />
-    <Compile Include="IServer.cs" />
+    <Compile Include="IOperatorProcessor.cs" />
+    <Compile Include="IServerEventsProcessor.cs" />
+    <Compile Include="OperatorEventInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

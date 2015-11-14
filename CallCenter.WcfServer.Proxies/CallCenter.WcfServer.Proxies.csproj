@@ -52,7 +52,7 @@
     <Compile Include="ChatServiceProxy.cs" />
     <Compile Include="ControllerProxyBase.cs" />
     <Compile Include="CustomerControllerProxy.cs" />
-    <Compile Include="LoginClient.cs" />
+    <Compile Include="OperatorEventProcessorClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +70,10 @@
     <ProjectReference Include="..\CallCenter.WcfService\CallCenter.WcfService.csproj">
       <Project>{74b22717-1097-474f-a17a-09db24c23c08}</Project>
       <Name>CallCenter.WcfService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CallCenterRepository\CallCenter.Repository.csproj">
+      <Project>{371bfbbe-8fec-43b3-a4d4-8dc1fa814a5b}</Project>
+      <Name>CallCenter.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -45,20 +45,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ServiceInstanceProvider.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceHostRunner.cs" />
+    <Compile Include="SingleInstance.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CallCenter.Client.Storage\CallCenter.Common.csproj">
+      <Project>{54840f7e-5e07-483a-aafc-eab04eb50faa}</Project>
+      <Name>CallCenter.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CallCenter.Datacontracts\CallCenter.ServiceContracts.csproj">
       <Project>{1229476F-6344-4E81-A9A2-7DB9D6BFD21C}</Project>
       <Name>CallCenter.ServiceContracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CallCenter.Server.Helper\CallCenter.Server.Helper.csproj">
+      <Project>{50b10877-3893-4054-a429-3889f468bde7}</Project>
+      <Name>CallCenter.Server.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CallCenter.Server\CallCenter.Server.csproj">
+      <Project>{0828d6b7-59a4-4cf9-b501-9a4e36b27c64}</Project>
+      <Name>CallCenter.Server</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CallCenter.WcfService\CallCenter.WcfService.csproj">
       <Project>{74b22717-1097-474f-a17a-09db24c23c08}</Project>
       <Name>CallCenter.WcfService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CallCenterRepository\CallCenter.Repository.csproj">
+      <Project>{371bfbbe-8fec-43b3-a4d4-8dc1fa814a5b}</Project>
+      <Name>CallCenter.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

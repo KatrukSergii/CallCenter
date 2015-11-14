@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using CallCenter.Common.Controllers;
 using CallCenter.Common.Entities;
+using CallCenterRepository.Controllers;
 using NHibernate;
 using NHibernate.Criterion;
 

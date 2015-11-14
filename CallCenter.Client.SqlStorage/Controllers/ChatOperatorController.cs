@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using CallCenter.Client.SqlStorage.Entities;
-using CallCenter.Common.Controllers;
 using CallCenter.Common.DataContracts;
 using CallCenter.Common.Entities;
+using CallCenterRepository.Controllers;
 using NHibernate;
 
 namespace CallCenter.Client.SqlStorage.Controllers

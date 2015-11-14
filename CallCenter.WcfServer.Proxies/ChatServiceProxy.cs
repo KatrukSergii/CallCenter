@@ -12,10 +12,5 @@ namespace CallCenter.WcfServer.Proxies
         {
             return this.Channel.GetChatHistory(agentId, fromDate, count);
         }
-
-        public IEnumerable<IOperatorChatMessage> GetChatMessages(int chatId, DateTime fromDate, int count)
-        {
-            return this.Channel.GetChatMessages(chatId, fromDate, count);
-        }
     }
 }

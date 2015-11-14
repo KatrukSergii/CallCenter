@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Diagnostics;
 using System.ServiceModel;
+using CallCenter.Common;
 using CallCenter.Common.Entities;
 using CallCenter.ServiceContracts.Services;
 
 namespace CallCenter.WcfServer.Proxies
 {
-    public class LoginClient : ClientBase<ILoginService>,ILoginService
+    public class OperatorEventProcessorClient : ClientBase<IOperatorEventProcessorService>,IOperatorEventProcessorService
     {
-        public IOperator Login(string number)
+        public IOperator ChangeOperatorState(IOperatorEventInfo eventInfo)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(number))
-                    throw new ArgumentNullException("number");
+                if (eventInfo == null)
+                    throw new ArgumentNullException("eventInfo");
 
-                IOperator res = this.Channel.Login(number);
+                IOperator res = this.Channel.ChangeOperatorState(eventInfo);
                 return res;
             }
             catch (Exception exception)
@@ -23,11 +24,6 @@ namespace CallCenter.WcfServer.Proxies
                 Debug.WriteLine(exception);
             }
             return null;
-        }
-
-        public void LogOut(string number)
-        {
-            this.Channel.LogOut(number);
         }
     }
 

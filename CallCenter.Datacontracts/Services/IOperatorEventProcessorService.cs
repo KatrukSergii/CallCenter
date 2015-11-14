@@ -1,4 +1,5 @@
 ﻿using System.ServiceModel;
+using CallCenter.Common;
 using CallCenter.Common.Entities;
 using CallCenter.Server.Helper;
 
@@ -6,13 +7,10 @@ namespace CallCenter.ServiceContracts.Services
 {
     [ServiceContract]
     [ServiceKnownType("GetKnownTypes", typeof(KnownTypesHelper))]
-    public interface ILoginService
+    public interface IOperatorEventProcessorService
     {
 
         [OperationContract]
-        IOperator Login(string number);
-
-        [OperationContract]
-        void LogOut(string number);
+        IOperator ChangeOperatorState(IOperatorEventInfo eventInfo);
     }
 }

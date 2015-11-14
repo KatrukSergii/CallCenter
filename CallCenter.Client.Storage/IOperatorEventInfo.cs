@@ -1,6 +1,8 @@
+using CallCenter.Common.Entities;
+
 namespace CallCenter.Common
 {
-    public interface IOperatorEventInfo
+    public interface IOperatorEventInfo: ISerializable
     {
         string OperatorNumber { get; set; }
         EventReason Reason { get; set; }
